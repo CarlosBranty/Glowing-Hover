@@ -1,0 +1,56 @@
+:root {
+    --color-bg: #21252B;
+    --color-crd: #282C34;
+    --color-1: #009B7C;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color-bg);
+}
+.hero{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.hero .card {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    background-color: var(--color-crd);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.hero .card::before{
+    content: '';
+    position: absolute;
+    background: radial-gradient(var(--color-1),transparent,transparent);
+    width: 600px;
+    height: 600px;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.3s, top 0s, left 0s;
+    border-radius: 100%;
+}
+.hero .card:hover::before{
+    opacity: 1;
+}
+.hero .card::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 20px;
+    background-color: #282c34c5;
+}
